@@ -1,9 +1,9 @@
 class MediainfoGui < Formula
   desc "Unified display of technical and tag data for audio/video"
   homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo-gui/0.7.95/MediaInfo_GUI_0.7.95_GNU_FromSource.tar.bz2"
-  version "0.7.95"
-  sha256 "758d407d2d22037d75c6e6cd0bf83d8cf5c2385c77f5319b8cbc47ca8eb828bd"
+  url "https://mediaarea.net/download/binary/mediainfo-gui/0.7.96/MediaInfo_GUI_0.7.96_GNU_FromSource.tar.bz2"
+  version "0.7.96"
+  sha256 "68eb0062cd594a03f113637a5f3422b97db7e78165c21b4a439506c7b7654714"
 
   bottle do
     cellar :any
