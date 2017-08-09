@@ -1,9 +1,9 @@
 class MediaconchGui < Formula
   desc "Conformance checker and technical metadata reporter (GUI)"
   homepage "https://mediaarea.net/MediaConch"
-  url "https://mediaarea.net/download/binary/mediaconch-gui/17.05/MediaConch_GUI_17.05_GNU_FromSource.tar.bz2"
-  version "17.05"
-  sha256 "fbb019405a2672b44e5e8e8fbbd1f79063b1aa82dfbbe2130186e826700e3be7"
+  url "https://mediaarea.net/download/binary/mediaconch-gui/17.07/MediaConch_GUI_17.07_GNU_FromSource.tar.bz2"
+  version "17.07"
+  sha256 "f9a485ad2b8198f45a3d2c332badfe028b56f7f1d8627e8060b37c52faac13b6"
 
   bottle do
     cellar :any
@@ -33,7 +33,7 @@ class MediaconchGui < Formula
 
     cd "MediaInfoLib/Project/GNU/Library" do
       args = ["--disable-debug",
-              "--with-libcurl",
+              "--with-libcurl=runtime",
               "--enable-static",
               "--disable-shared"]
       system "./configure", *args
