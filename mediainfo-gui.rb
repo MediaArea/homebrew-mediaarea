@@ -1,9 +1,9 @@
 class MediainfoGui < Formula
   desc "Unified display of technical and tag data for audio/video"
   homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo-gui/0.7.96/MediaInfo_GUI_0.7.96_GNU_FromSource.tar.bz2"
-  version "0.7.96"
-  sha256 "68eb0062cd594a03f113637a5f3422b97db7e78165c21b4a439506c7b7654714"
+  url "https://mediaarea.net/download/binary/mediainfo-gui/0.7.98/MediaInfo_GUI_0.7.98_GNU_FromSource.tar.bz2"
+  version "0.7.98"
+  sha256 "a19081570bca8d6463e67e30249aff33cd439fdb8d1f756c86f55612867f6068"
 
   bottle do
     cellar :any
@@ -28,7 +28,7 @@ class MediainfoGui < Formula
 
     cd "MediaInfoLib/Project/GNU/Library" do
       args = ["--disable-debug",
-              "--with-libcurl",
+              "--with-libcurl=runtime",
               "--enable-static",
               "--disable-shared"]
       system "./configure", *args
