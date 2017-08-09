@@ -15,6 +15,7 @@ class MediaconchGui < Formula
   depends_on "pkg-config" => :build
   depends_on "jansson"
   depends_on "libevent"
+  depends_on "libxml2"
   depends_on "sqlite"
   depends_on "qt5"
   # fails to build against Leopard's older libcurl
@@ -41,7 +42,7 @@ class MediaconchGui < Formula
     end
 
     cd "MediaConch/Project/Qt" do
-      system "#{Formula["qt5"].bin}/qmake", "STATIC_LIBS=1"
+      system "#{Formula["qt5"].bin}/qmake", "STATIC_LIBS=1", "-after", "QMAKE_MACOSX_DEPLOYMENT_TARGET=10.7"
 
       system "make"
 
@@ -69,13 +70,4 @@ index 829e261..00707e1 100644
 +unix:CONFIG += link_pkgconfig c++11
  
  DEFINES          +=  _UNICODE
- 
-@@ -312,7 +315,7 @@ contains(NO_LIBEVENT, yes|1) {
-     }
- }
- 
--macx:QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.5
-+macx:QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.7
- LIBS             += -lz
- !macx:LIBS       += -ldl -lrt
  
