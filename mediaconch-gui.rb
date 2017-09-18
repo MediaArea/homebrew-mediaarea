@@ -17,7 +17,7 @@ class MediaconchGui < Formula
   depends_on "libevent"
   depends_on "libxml2"
   depends_on "sqlite"
-  depends_on "qt5"
+  depends_on "qt"
   # fails to build against Leopard's older libcurl
   depends_on "curl" if MacOS.version < :snow_leopard
 
@@ -42,7 +42,7 @@ class MediaconchGui < Formula
     end
 
     cd "MediaConch/Project/Qt" do
-      system "#{Formula["qt5"].bin}/qmake", "STATIC_LIBS=1", "-after", "QMAKE_MACOSX_DEPLOYMENT_TARGET=10.7"
+      system "#{Formula["qt"].bin}/qmake", "STATIC_LIBS=1", "-after", "QMAKE_MACOSX_DEPLOYMENT_TARGET=10.7"
 
       system "make"
 
