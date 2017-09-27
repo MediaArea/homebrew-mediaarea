@@ -22,7 +22,6 @@ class BwfmetaeditGui < Formula
       prefix.install "BWF MetaEdit.app"
 
       bin.mkpath
-      system "mkdir", "-p", "#{bin}"
       ln "#{prefix}/BWF MetaEdit.app/Contents/MacOS/BWF MetaEdit", "#{bin}/bwfmetaedit-gui"
     end
   end
