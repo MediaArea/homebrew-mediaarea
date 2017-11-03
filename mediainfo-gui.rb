@@ -3,14 +3,7 @@ class MediainfoGui < Formula
   homepage "https://mediaarea.net/"
   url "https://mediaarea.net/download/binary/mediainfo-gui/17.10/MediaInfo_GUI_17.10_GNU_FromSource.tar.bz2"
   version "17.10"
-  sha256 ""
-
-  bottle do
-    cellar :any
-    sha256 "8fef9f03fff1925ab9c5279fb1ac52470139add4b4e2f2adf5a10df08a70d96d" => :sierra
-    sha256 "1dab3eb4b641bd231a7526bec9907cbde1f1c71b651c63d8d7dc83b2683cc406" => :el_capitan
-    sha256 "c9a7da28d09c2fee2a7c412652f7f564b2c976b8e7207918c301881ed255d912" => :yosemite
-  end
+  sha256 "a20e2dbdba5702730dd9bb919a29abd1ca58593d41d9457201922e1d134bcb62"
 
   depends_on "pkg-config" => :build
   # fails to build against Leopard's older libcurl
