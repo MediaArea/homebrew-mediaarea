@@ -5,13 +5,6 @@ class MediaconchGui < Formula
   version "17.08"
   sha256 "3d9d8b154bb0c7111a158ce6b0a64fa2a168e4b610d61ada51df5044f90aabce"
 
-  bottle do
-    cellar :any
-    sha256 "8fef9f03fff1925ab9c5279fb1ac52470139add4b4e2f2adf5a10df08a70d96d" => :sierra
-    sha256 "1dab3eb4b641bd231a7526bec9907cbde1f1c71b651c63d8d7dc83b2683cc406" => :el_capitan
-    sha256 "c9a7da28d09c2fee2a7c412652f7f564b2c976b8e7207918c301881ed255d912" => :yosemite
-  end
-
   depends_on "pkg-config" => :build
   depends_on "jansson"
   depends_on "libevent"
