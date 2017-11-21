@@ -1,9 +1,9 @@
 class BwfmetaeditGui < Formula
   desc "A tool that supports embedding, validating, and exporting of metadata in Broadcast WAVE Format (BWF) files (GUI)"
   homepage "https://mediaarea.net/BWFMetaEdit"
-  version "1.3.2"
+  version "1.3.3"
   url "https://mediaarea.net/download/binary/bwfmetaedit-gui/#{version}/BWFMetaEdit_GUI_#{version}_GNU_FromSource.tar.bz2"
-  sha256 "6d6117dce0716f3dcefe906cd909c9c51549aaa7513bd33cffa34caf9890fd97"
+  sha256 "6534bbaf2c598cfacec175c6d4502cfb1543312290aab68299e5a9995cc25a1f"
 
   depends_on "qt"
 
