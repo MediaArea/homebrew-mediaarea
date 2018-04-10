@@ -1,9 +1,9 @@
 class MediaconchGui < Formula
   desc "Conformance checker and technical metadata reporter (GUI)"
   homepage "https://mediaarea.net/MediaConch"
-  url "https://mediaarea.net/download/binary/mediaconch-gui/18.03.1/MediaConch_GUI_18.03.1_GNU_FromSource.tar.bz2"
-  version "18.03.1"
-  sha256 "d1fb6b997fe353268492ac31982d420a3f2e7b3c98bc6d9e8766f45807bce12e"
+  url "https://mediaarea.net/download/binary/mediaconch-gui/18.03.2/MediaConch_GUI_18.03.2_GNU_FromSource.tar.bz2"
+  version "18.03.2"
+  sha256 "09defa3883389e206a0cabc97ecdb3bf23c18aa9fa55d2acfca19899a01561c7"
 
   depends_on "pkg-config" => :build
   depends_on "jansson"
