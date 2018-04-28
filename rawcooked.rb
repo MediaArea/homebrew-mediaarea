@@ -14,4 +14,8 @@ class Rawcooked < Formula
       system "make", "install"
     end
   end
+
+  test do
+    system "#{bin}/rawcooked", "-h"
+  end
 end
