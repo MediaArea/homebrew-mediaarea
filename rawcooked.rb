@@ -1,9 +1,9 @@
 class Rawcooked < Formula
   desc "Losless RAW audio-visual data to MKV encoder"
   homepage "https://mediaarea.net/RAWCooked"
-  url "https://mediaarea.net/download/binary/rawcooked/18.06alpha1/RAWcooked_CLI_18.06alpha1_GNU_FromSource.tar.xz"
-  version "18.06alpha1"
-  sha256 "ed226fc2909244472ce9646cfdbff7c1ead98d3d94fcab131cd4680c969ec3fe"
+  url "https://mediaarea.net/download/binary/rawcooked/18.07alpha2/RAWcooked_CLI_18.07alpha2_GNU_FromSource.tar.xz"
+  version "18.07alpha2"
+  sha256 "dba8fbf49841a9a89c66b53176f54ba00598124ceb802758fe293f1c6061e567"
 
   def install
     cd "Project/GNU/CLI" do
