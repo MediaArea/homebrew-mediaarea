@@ -1,5 +1,5 @@
 class Rawcooked < Formula
-  desc "Losless RAW audio-visual data to MKV encoder"
+  desc "Lossless RAW audio-visual data to MKV encoder and decoder"
   homepage "https://mediaarea.net/RAWcooked"
   url "https://mediaarea.net/download/binary/rawcooked/18.10.1/RAWcooked_CLI_18.10.1_GNU_FromSource.tar.xz"
   version "18.10.1"
