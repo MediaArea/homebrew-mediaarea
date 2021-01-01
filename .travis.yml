@@ -1,9 +1,0 @@
-language: cpp
-
-os: osx
-compiler: clang
-
-before_install:
-  - brew update
-  - brew tap test/homebrew-mediaarea $PWD
-script: for formula in $(git diff --name-only --diff-filter=AM $TRAVIS_COMMIT_RANGE | grep -e '.*\.rb') ; do brew install $(basename -s .rb $formula) ; done
