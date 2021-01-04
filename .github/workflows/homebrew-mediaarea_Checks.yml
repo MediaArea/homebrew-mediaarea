@@ -24,10 +24,13 @@ jobs:
                 if [[  "${file##*.}" != "rb" ]] ; then
                     continue
                 fi
-                brew audit --strict $file
+                formula=$(basename -s .rb $file)
                 if [[ "$(dirname $file)" == "Casks" ]] ; then
-                    brew install --cask "$(basename -s .rb $file)"
+                    brew install --cask $formula
+                    brew cask audit --download $formula
+                    brew cask style --fix $formula
                 else
-                    brew install "$(basename -s .rb $file)"
+                    brew install $formula
+                    brew audit --strict $formula
                 fi
             done
