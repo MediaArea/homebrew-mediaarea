@@ -4,6 +4,8 @@ class Dvrescue < Formula
   url "https://mediaarea.net/download/binary/dvrescue/0.20.06/dvrescue_CLI_0.20.06_GNU_FromSource.tar.xz"
   sha256 "259fced760add16fc5153819b9e13bcd0374c616af768ef838b9d4bd9df86530"
 
+  depends_on "xmlstarlet"
+
   def install
     cd "ZenLib/Project/GNU/Library" do
       args = ["--disable-debug",
