@@ -32,4 +32,8 @@ class MediainfoGui < Formula
       system "make", "install"
     end
   end
+
+  test do
+    assert_predicate "#{bin}/mediaino-gui", :exist?
+  end
 end
