@@ -34,6 +34,6 @@ class MediainfoGui < Formula
   end
 
   test do
-    assert_predicate "#{bin}/mediaino-gui", :exist?
+    assert_predicate "#{bin}/mediainfo-gui", :exist?
   end
 end
