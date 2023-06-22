@@ -27,8 +27,7 @@ jobs:
                 formula=$(basename -s .rb $file)
                 if [[ "$(dirname $file)" == "Casks" ]] ; then
                     brew install --cask $formula
-                    brew cask audit --download $formula
-                    brew cask style --fix $formula
+                    brew audit --cask --strict $formula
                 else
                     brew install $formula
                     brew audit --strict $formula
