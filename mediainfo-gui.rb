@@ -1,8 +1,8 @@
 class MediainfoGui < Formula
   desc "Unified display of technical and tag data for audio/video"
   homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo-gui/23.07/MediaInfo_GUI_23.07_GNU_FromSource.tar.xz"
-  sha256 "e15425a64649195b0b192ad16b76ee74d407772dd3ec88dee5cee743c98018ec"
+  url "https://mediaarea.net/download/binary/mediainfo-gui/23.09/MediaInfo_GUI_23.09_GNU_FromSource.tar.xz"
+  sha256 "d16120d7b27cf927b8da6f9d977ae5abde8f94a879fcd40926b0a650a4c599c0"
 
   depends_on "pkg-config" => :build
   # fails to build against Leopard's older libcurl
