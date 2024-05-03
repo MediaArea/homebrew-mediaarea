@@ -1,8 +1,8 @@
 class Dvrescue < Formula
   desc "Data migration from DV tapes into files for long-term preservation"
   homepage "https://mediaarea.net/dvrescue"
-  url "https://mediaarea.net/download/binary/dvrescue/24.04/dvrescue_CLI_24.04_GNU_FromSource.tar.xz"
-  sha256 "5f3f1bd869860a8cfa88c9d0a3e44aa139d4ce5a6a9d029e750b6a0402d40126"
+  url "https://mediaarea.net/download/binary/dvrescue/24.05/dvrescue_CLI_24.05_GNU_FromSource.tar.xz"
+  sha256 "7aa0c3a8a5733abe6fdc5a0dfc7867866a9dac46b444eac4c0efcadd935a9100"
 
   depends_on "xmlstarlet"
 
