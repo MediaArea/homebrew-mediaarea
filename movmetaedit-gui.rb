@@ -1,15 +1,14 @@
 class MovmetaeditGui < Formula
-  desc "A tool that supports embedding, validating, and exporting of metadata in  MOV (Apple QuickTime) or MP4 (ISO/IEC 14496-14) files (GUI)"
+  desc "Embed, validate and export MOV (QuickTime) or MP4 files metadata"
   homepage "https://mediaarea.net/MOVMetaEdit"
-  version "17.10.1"
-  url "https://mediaarea.net/download/binary/movmetaedit-gui/#{version}/MOVMetaEdit_GUI_#{version}_GNU_FromSource.tar.bz2"
-  sha256 "97d82567b6ef8d00b7d1c35659175ccd5cb0f5770de3c704383d6e3df364ff2c"
+  url "https://mediaarea.net/download/binary/movmetaedit-gui/24.06/MOVMetaEdit_GUI_24.06_GNU_FromSource.tar.xz"
+  sha256 "d743baa9963ea67c9ecdf5a2a01368fffabbef989da493ded978a5d12f01244a"
 
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     cd "Project/Qt" do
-      system "#{Formula["qt"].bin}/qmake"
+      system "#{Formula["qt@5"].bin}/qmake"
       system "make"
 
       prefix.install "MOV MetaEdit.app"
@@ -17,5 +16,9 @@ class MovmetaeditGui < Formula
       bin.mkpath
       ln "#{prefix}/MOV MetaEdit.app/Contents/MacOS/MOV MetaEdit", "#{bin}/movmetaedit-gui"
     end
+  end
+
+  test do
+    assert_predicate "#{bin}/movmetaedit-gui", :exist?
   end
 end
