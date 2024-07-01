@@ -1,20 +1,15 @@
 class MediaconchGui < Formula
   desc "Conformance checker and technical metadata reporter (GUI)"
   homepage "https://mediaarea.net/MediaConch"
-  url "https://mediaarea.net/download/binary/mediaconch-gui/18.03.2/MediaConch_GUI_18.03.2_GNU_FromSource.tar.bz2"
-  version "18.03.2"
-  sha256 "09defa3883389e206a0cabc97ecdb3bf23c18aa9fa55d2acfca19899a01561c7"
+  url "https://mediaarea.net/download/binary/mediaconch-gui/24.06/MediaConch_GUI_24.06_GNU_FromSource.tar.xz"
+  sha256 "4330ebd0708ba6bc6c8a59e84299956186bd686839dd6f99ba689bcd778a5c99"
 
   depends_on "pkg-config" => :build
   depends_on "jansson"
   depends_on "libevent"
   depends_on "libxml2"
+  depends_on "qt@5"
   depends_on "sqlite"
-  depends_on "qt"
-  # fails to build against Leopard's older libcurl
-  depends_on "curl" if MacOS.version < :snow_leopard
-
-  patch :DATA
 
   def install
     cd "ZenLib/Project/GNU/Library" do
@@ -35,32 +30,17 @@ class MediaconchGui < Formula
     end
 
     cd "MediaConch/Project/Qt" do
-      system "#{Formula["qt"].bin}/qmake", "STATIC_LIBS=1", "-after", "QMAKE_MACOSX_DEPLOYMENT_TARGET=10.7"
+      system "#{Formula["qt@5"].bin}/qmake", "STATIC_LIBS=1"
 
       system "make"
 
       prefix.install "MediaConch.app"
 
-      system "mkdir", "-p", "#{prefix}/bin"
-      system "ln", "-s", "#{prefix}/MediaConch.app/Contents/MacOS/MediaConch", "#{prefix}/bin/mediaconch-gui"
+      mkdir bin.to_s
+      ln "#{prefix}/MediaConch.app/Contents/MacOS/MediaConch", "#{bin}/mediaconch-gui"
     end
   end
+  test do
+    assert_predicate "#{bin}/mediaconch-gui", :exist?
+  end
 end
-
-__END__
-diff --git a/MediaConch/Project/Qt/MediaConch.pro b/MediaConch/Project/Qt/MediaConch.pro
-index 829e261..00707e1 100644
---- a/MediaConch/Project/Qt/MediaConch.pro
-+++ b/MediaConch/Project/Qt/MediaConch.pro
-@@ -52,7 +52,10 @@ TEMPLATE = app
- CONFIG += qt release
- CONFIG += no_keywords
- 
--unix:CONFIG += link_pkgconfig
-+macx:QT_CONFIG -= no-pkg-config
-+macx:PKG_CONFIG = pkg-config
-+
-+unix:CONFIG += link_pkgconfig c++11
- 
- DEFINES          +=  _UNICODE
- 

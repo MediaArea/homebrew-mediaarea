@@ -1,10 +1,24 @@
-cask 'mediaconch-gui' do
-  version '18.03.2'
-  sha256 '2dc51e39b74d516e094063860015c7ff37d6a038009e69dd121b7ff905911bbc'
+cask "mediaconch-gui" do
+  version "24.06"
+  sha256 "5845a2099fd941d26e23c591a49441496aebddc2df49dab58516a74db4ab768a"
 
   url "https://mediaarea.net/download/binary/mediaconch-gui/#{version}/MediaConch_GUI_#{version}_Mac.dmg"
-  appcast 'https://github.com/MediaArea/MediaConch_SourceCode/releases.atom'
-  name 'MediaConch'
-  homepage 'https://mediaarea.net/MediaConch/'
-  app 'MediaConch.app'
+  name "MediaConch"
+  desc "Conformance checker and technical metadata reporter (GUI)"
+  homepage "https://mediaarea.net/MediaConch"
+
+  livecheck do
+    url "https://mediaarea.net/MediaConch/Download/Mac_OS"
+    regex(/href=.*?MediaConch_GUI_(\d+(?:\.\d+)+)_Mac\.dmg/i)
+  end
+
+  depends_on macos: ">= :high_sierra"
+
+  app "MediaConch.app"
+
+  zap trash: [
+    "~/Library/Caches/mediaconch",
+    "~/Library/Preferences/net.mediaarea.mediaconch-gui.mac.plist",
+    "~/Library/Saved Application State/net.mediaarea.mediaconch-gui.mac.savedState",
+  ]
 end
