@@ -9,6 +9,8 @@ class MediainfoGui < Formula
   depends_on "curl"
   depends_on "wxwidgets"
 
+  patch :DATA
+
   def install
     cd "ZenLib/Project/GNU/Library" do
       args = ["--disable-debug",
@@ -37,3 +39,18 @@ class MediainfoGui < Formula
     assert_predicate `bin/mediainfo-gui`, :exist?
   end
 end
+
+__END__
+diff --git a/ZenLib/Source/ZenLib/Conf.h b/ZenLib/Source/ZenLib/Conf.h
+index 792f313..735aa33 100644
+--- a/ZenLib/Source/ZenLib/Conf.h
++++ b/ZenLib/Source/ZenLib/Conf.h
+@@ -208,7 +208,7 @@
+ //---------------------------------------------------------------------------
+ //(-1) is known to be the MAX of an unsigned int but GCC complains about it
+ #ifdef __cplusplus
+-    #include <new> //for size_t
++    #include <cstddef> //for size_t
+ #else /* __cplusplus */
+     #include <stddef.h> //for size_t
+ #endif /* __cplusplus */
