@@ -13,10 +13,15 @@ class FfmpegMa < Formula
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
+  depends_on "sdl2"
   depends_on "shaderc"
   depends_on "vulkan-headers"
 
   uses_from_macos "zlib"
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   patch do
     url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/8eae8c9dcba927d24e91b87d7d0d9f296187dad1/0001-EXR_consider_float16_as_uint16.patch"
@@ -55,11 +60,12 @@ class FfmpegMa < Formula
 
   def install
     args = %W[
+      --progs-suffix=-ma
       --prefix=#{prefix}
       --disable-autodetect
       --disable-debug
-      --disable-static
-      --enable-shared
+      --disable-shared
+      --enable-static
       --enable-pthreads
       --enable-videotoolbox
       --enable-audiotoolbox
@@ -69,6 +75,8 @@ class FfmpegMa < Formula
       --enable-libshaderc
       --enable-decklink
       --enable-zlib
+      --enable-sdl2
+      --enable-ffplay
       --extra-cflags=-IDeckLinkSDK/Mac/include
     ]
 
@@ -76,7 +84,9 @@ class FfmpegMa < Formula
 
     system "./configure", *args
     rm "version" # Remove this file, CFLAGS contains -I. and its confused with the C++ <version> standard header
-    system "make", "install"
+    system "make"
+
+    bin.install buildpath.children.select { |f| f.file? && f.executable? && f.basename.to_s.end_with?("-ma") }
   end
 
   test do
