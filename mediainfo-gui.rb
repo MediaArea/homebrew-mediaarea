@@ -1,8 +1,8 @@
 class MediainfoGui < Formula
   desc "Unified display of technical and tag data for audio/video"
   homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo-gui/24.12/MediaInfo_GUI_24.12_GNU_FromSource.tar.xz"
-  sha256 "d78b8541133036955efdb92dd5e7a538ebc4cb38e8dce913c9f96be9c40e35a1"
+  url "https://mediaarea.net/download/binary/mediainfo-gui/25.03/MediaInfo_GUI_25.03_GNU_FromSource.tar.xz"
+  sha256 "9dccd83db539f8644208c79a70cb45b319c9d9da5886c2e96940a4e1523ce975"
 
   depends_on "pkg-config" => :build
   # fails to build against Leopard's older libcurl
@@ -34,6 +34,6 @@ class MediainfoGui < Formula
   end
 
   test do
-    assert_predicate `bin/mediainfo-gui`, :exist?
+    assert_path_exists `bin/mediainfo-gui`
   end
 end
