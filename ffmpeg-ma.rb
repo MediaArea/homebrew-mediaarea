@@ -13,6 +13,7 @@ class FfmpegMa < Formula
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
+  depends_on "openh264"
   depends_on "sdl2"
   depends_on "shaderc"
   depends_on "vulkan-headers"
@@ -71,6 +72,7 @@ class FfmpegMa < Formula
       --enable-audiotoolbox
       --enable-libfreetype
       --enable-libharfbuzz
+      --enable-libopenh264
       --enable-vulkan
       --enable-libshaderc
       --enable-decklink
