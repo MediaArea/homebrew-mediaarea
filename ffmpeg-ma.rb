@@ -10,6 +10,8 @@ class FfmpegMa < Formula
     regex(/href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  option "with-iec61883", "Enable DV device (Linux)" if OS.linux?
+
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
@@ -68,8 +70,6 @@ class FfmpegMa < Formula
       --disable-shared
       --enable-static
       --enable-pthreads
-      --enable-videotoolbox
-      --enable-audiotoolbox
       --enable-libfreetype
       --enable-libharfbuzz
       --enable-libopenh264
@@ -79,13 +79,18 @@ class FfmpegMa < Formula
       --enable-zlib
       --enable-sdl2
       --enable-ffplay
-      --extra-cflags=-IDeckLinkSDK/Mac/include
     ]
 
     args << "--enable-neon" if Hardware::CPU.arm?
+    args << "--enable-videotoolbox" if OS.mac?
+    args << "--enable-audiotoolbox" if OS.mac?
+    args << "--extra-cflags=-IDeckLinkSDK/Mac/include" if OS.mac?
+    args << "--extra-cflags=-IDeckLinkSDK/Linux/include" if OS.linux?
+    args << "--enable-libiec61883" if (build.with? "iec61883") && OS.linux?
 
     system "./configure", *args
-    rm "version" # Remove this file, CFLAGS contains -I. and its confused with the C++ <version> standard header
+    # Remove this file, CFLAGS contains -I. and its confused with the C++ <version> standard header
+    rm "version" if File.file?("version")
     system "make"
 
     bin.install buildpath.children.select { |f| f.file? && f.executable? && f.basename.to_s.end_with?("-ma") }
@@ -94,7 +99,7 @@ class FfmpegMa < Formula
   test do
     # Create an example mp4 file
     mp4out = testpath/"video.mp4"
-    system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    system bin/"ffmpeg-ma", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_path_exists mp4out
   end
 end
