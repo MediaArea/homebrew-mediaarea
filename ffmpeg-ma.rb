@@ -1,8 +1,8 @@
 class FfmpegMa < Formula
   desc "FFmpeg binaries with MediaArea's patches"
   homepage "https://github.com/MediaArea/ffmpeg-ma-patch"
-  url "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz"
-  sha256 "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1"
+  url "https://ffmpeg.org/releases/ffmpeg-8.0.tar.xz"
+  sha256 "b2751fccb6cc4c77708113cd78b561059b6fa904b24162fa0be2d60273d27b8e"
   head "git://git.ffmpeg.org/ffmpeg.git", branch: "master"
 
   livecheck do
@@ -85,7 +85,9 @@ class FfmpegMa < Formula
     args << "--enable-videotoolbox" if OS.mac?
     args << "--enable-audiotoolbox" if OS.mac?
     args << "--extra-cflags=-IDeckLinkSDK/Mac/include" if OS.mac?
+    args << "--extra-cxxflags=-IDeckLinkSDK/Mac/include" if OS.mac?
     args << "--extra-cflags=-IDeckLinkSDK/Linux/include" if OS.linux?
+    args << "--extra-cxxflags=-IDeckLinkSDK/Linux/include" if OS.linux?
     args << "--enable-libiec61883" if (build.with? "iec61883") && OS.linux?
 
     system "./configure", *args
