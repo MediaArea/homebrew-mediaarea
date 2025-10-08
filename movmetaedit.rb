@@ -1,8 +1,8 @@
 class Movmetaedit < Formula
   desc "Embed, validate and export MOV (QuickTime) or MP4 files metadata"
   homepage "https://mediaarea.net/MOVMetaEdit"
-  url "https://mediaarea.net/download/binary/movmetaedit/24.06/MOVMetaEdit_CLI_24.06_GNU_FromSource.tar.xz"
-  sha256 "51c74eb5db845e9436f3e82f37ea1a9c8c8f8a00ddacd6f5087696081b74ba2a"
+  url "https://mediaarea.net/download/binary/movmetaedit/25.09/MOVMetaEdit_CLI_25.09_GNU_FromSource.tar.xz"
+  sha256 "8f850fdbbe87e6a29769d3ecaff95e961ae1aba68f36661ff4a3383bf85dfc30"
 
   def install
     cd "Project/GNU/CLI" do
@@ -15,6 +15,6 @@ class Movmetaedit < Formula
   end
 
   test do
-    system "#{bin}/movmetaedit", "--help"
+    system "bin/movmetaedit", "--help"
   end
 end
