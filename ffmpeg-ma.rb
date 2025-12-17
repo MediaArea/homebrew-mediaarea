@@ -3,6 +3,7 @@ class FfmpegMa < Formula
   homepage "https://github.com/MediaArea/ffmpeg-ma-patch"
   url "https://ffmpeg.org/releases/ffmpeg-8.0.tar.xz"
   sha256 "b2751fccb6cc4c77708113cd78b561059b6fa904b24162fa0be2d60273d27b8e"
+  revision 1
   head "git://git.ffmpeg.org/ffmpeg.git", branch: "master"
 
   livecheck do
