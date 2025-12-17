@@ -22,6 +22,10 @@ class FfmpegMa < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "alsa-lib"
+  end
+
   on_intel do
     depends_on "nasm" => :build
   end
@@ -84,10 +88,12 @@ class FfmpegMa < Formula
     args << "--enable-neon" if Hardware::CPU.arm?
     args << "--enable-videotoolbox" if OS.mac?
     args << "--enable-audiotoolbox" if OS.mac?
+    args << "--enable-avfoundation" if OS.mac?
     args << "--extra-cflags=-IDeckLinkSDK/Mac/include" if OS.mac?
     args << "--extra-cxxflags=-IDeckLinkSDK/Mac/include" if OS.mac?
     args << "--extra-cflags=-IDeckLinkSDK/Linux/include" if OS.linux?
     args << "--extra-cxxflags=-IDeckLinkSDK/Linux/include" if OS.linux?
+    args << "--enable-alsa" if OS.linux?
     args << "--enable-libiec61883" if (build.with? "iec61883") && OS.linux?
 
     system "./configure", *args
