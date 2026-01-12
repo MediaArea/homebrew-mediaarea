@@ -2,8 +2,9 @@ class Timecodexml < Formula
   desc "Convert MediaTimecode XML from MediaInfo into MediaTimecode VTT"
   homepage "https://github.com/MediaArea/timecodexml"
   url "https://github.com/MediaArea/timecodexml/archive/refs/tags/v0.2.tar.gz"
-  sha256 "d59d4438d16f4d41fffdf255c85dcb74bd50ebb5e24f020d3b7f3da13ca9fa48"
+  sha256 "5041dba96511d033df2069450115a58f9f171fb2590372dd35ed6895bc38977b"
   head "https://github.com/MediaArea/timecodexml.git", branch: "main"
+  revision 1
 
   def install
     system "make"
