@@ -1,7 +1,7 @@
 class FfmpegMa < Formula
   desc "FFmpeg binaries with MediaArea's patches"
   homepage "https://github.com/MediaArea/ffmpeg-ma-patch"
-  revision 6
+  revision 7
 
   stable do
     url "https://ffmpeg.org/releases/ffmpeg-8.0.tar.xz"
@@ -222,6 +222,7 @@ class FfmpegMa < Formula
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
+  depends_on "libass"
   depends_on "openh264"
   depends_on "sdl2"
   depends_on "shaderc"
@@ -248,6 +249,7 @@ class FfmpegMa < Formula
       --enable-pthreads
       --enable-libfreetype
       --enable-libharfbuzz
+      --enable-libass
       --enable-libopenh264
       --enable-vulkan
       --enable-libshaderc
