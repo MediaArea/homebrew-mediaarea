@@ -12,8 +12,6 @@ cask "dvrescue-gui" do
     regex(/href=.*?dvrescue_GUI_(\d+(?:\.\d+)+)_Mac\.dmg/i)
   end
 
-  depends_on macos: ">= :high_sierra"
-
   app "DVRescue.app"
 
   zap trash: [
