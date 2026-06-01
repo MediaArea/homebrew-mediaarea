@@ -12,8 +12,6 @@ cask "mediaconch-gui" do
     regex(/href=.*?MediaConch_GUI_(\d+(?:\.\d+)+)_Mac\.dmg/i)
   end
 
-  depends_on macos: ">= :high_sierra"
-
   app "MediaConch.app"
 
   zap trash: [
