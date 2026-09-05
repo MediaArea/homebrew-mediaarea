@@ -17,7 +17,8 @@ jobs:
         uses: jitterbit/get-changed-files@v1
       - name: Install repository
         run: |
-          brew tap mediaarea/homebrew-mediaarea $PWD
+          brew tap mediaarea/mediaarea $PWD
+          brew trust mediaarea/mediaarea
       - name: Check
         run: |
             for file in ${{ steps.changed-files.outputs.added_modified }} ; do
