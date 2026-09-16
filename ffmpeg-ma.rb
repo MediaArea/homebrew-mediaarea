@@ -1,110 +1,119 @@
 class FfmpegMa < Formula
   desc "FFmpeg binaries with MediaArea's patches"
   homepage "https://github.com/MediaArea/ffmpeg-ma-patch"
-  revision 7
 
   stable do
-    url "https://ffmpeg.org/releases/ffmpeg-8.0.tar.xz"
-    sha256 "b2751fccb6cc4c77708113cd78b561059b6fa904b24162fa0be2d60273d27b8e"
+    url "https://ffmpeg.org/releases/ffmpeg-9.0.1.tar.xz"
+    sha256 "cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635"
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0000-libavdevice-decklink-add-support-for-DeckLink-SDK-14.patch"
-      sha256 "8e14ffe76c93b69d6eb32c985a7a0eeee865e4119b3c553026cd2e68fa048c37"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0001-EXR_consider_float16_as_uint16.patch"
+      sha256 "d49feec53ec58a10b58775e1616a079b92814806f35d96c98de7e33690410f9c"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0001-EXR_consider_float16_as_uint16.patch"
-      sha256 "5549ebab36311b28d0e74a91dcde0ddf3bc3035b5b11671aa86ff911f8a59e38"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0002-libavcodec-flacenc-force-32-bit-output-for-32-bit-in.patch"
+      sha256 "7e92b40c6d23be91997dc05e64ab7af592185fd8110aaf7edd34b1be939919e9"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0002-libavcodec-flacenc-force-32-bit-output-for-32-bit-in.patch"
-      sha256 "ab90e9c1e0c89d78daeaa77b3577eea8d8cf70974a16719b624b56fa6b929210"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0003-avcodec-jpeg2000dec-support-of-2-fields-in-1-AVPacke.patch"
+      sha256 "6a5289d0cc37fbb0dc126561ed5bf821bb476f7cd4aeaf0bac5e8cb2331b4476"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0003-avcodec-jpeg2000dec-support-of-2-fields-in-1-AVPacke.patch"
-      sha256 "7ba4aeeda6ddf3f9636c2be14298eb37f48666d032873bbea1e3212fc29e51f6"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0004-avcodec-dpx-Fix-B-W-film-scans-from-DIAMANT-Film.patch"
+      sha256 "495104b1bb94435de79ace4a1d686586c16ca05865adba4be0d9c94a82a482c3"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0004-avcodec-dpx-Fix-B-W-film-scans-from-DIAMANT-Film.patch"
-      sha256 "b14413717d6393f5b6dee66bc9ce6f5549d67fd15d3181ed79513ed2f6ee57be"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0005-configure-evaluate-toolchain-to-determine-suffix.patch"
+      sha256 "596348c010e46e7a29859977e2b071fdcef8b61759d6339c437ec857cdd5291e"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0005-configure-evaluate-toolchain-to-determine-suffix.patch"
-      sha256 "3e85c05cbce1aa876cca91e4e5c325eca3d29ef3c26c0cbb735978ce7562537b"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0006-DeckLink-SDK-15.3-public-headers.patch"
+      sha256 "fe3925bfb3978b8ed2892139f2b7b97ce2796d00a12587d0ac5866bb9b46e947"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0006-DeckLink-SDK-15.3-public-headers.patch"
-      sha256 "e4f7c8a7ac75d3a4e1e36c87a7d0aa28bab2fcad06f441ae479c617f95ba9bbf"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0007-matroskaenc-remove-unused-MaxBlockAdditionID.patch"
+      sha256 "360c7d448d18c2c32ae58f3a23f75266cfad48636bcd919928e7eda04046683b"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0007-matroskaenc-remove-unused-MaxBlockAdditionID.patch"
-      sha256 "070ac10b52f2c5de392638e0a41c1872e7028d37a466b07c7d46dca7424bfe7b"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0008-matroskaenc-reserve_video_track_space-option.patch"
+      sha256 "04996e6268bfb1a40d868aaccf173d596d81aa5681d0a653a8fbebda056caae5"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0008-matroskaenc-reserve_video_track_space-option.patch"
-      sha256 "41c1ae1480140ea01f233245b0f4d40a51277667fe9a96c204ad6fe962a2cc6a"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0009-matroskaenc-increase-default-for-reserved-bytes-in-v.patch"
+      sha256 "2ce9139c54c95e5c1e1e3c89b598ff2c13bcbd8ca1e318d638f69e4a91ea4c69"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0009-matroskaenc-increase-default-for-reserved-bytes-in-v.patch"
-      sha256 "4c45168ad06f752e0f51f111b7ff640a2fc6766aabd2fc207fe5c3739f6b907f"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0010-32-bit-timecode-to-64-bit-RFC-5484-timecode-function.patch"
+      sha256 "c1fccd52fb055a6247cc55cb41a3611be6bdf6f5c44430b69d717bfa60069d5b"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0010-32-bit-timecode-to-64-bit-RFC-5484-timecode-function.patch"
-      sha256 "bbfa499cdf5c61a544d5e53a55031545cd40a02e6f6019eb219407139c61fb27"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0011-decklink_dec-store-timecode-in-64-bit-RFC-5484-forma.patch"
+      sha256 "f7f2db16a49886b694f852dc6afe477ce7165e3d849c0d5ba246a3314cd8bf5c"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0011-decklink_dec-store-timecode-in-64-bit-RFC-5484-forma.patch"
-      sha256 "8221ee2ec1c717d9251e01bbdf890ad6aa76c97086f70ec63a98119a586f4da3"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0012-matroskadec-read-timecode-in-BlockAddition.patch"
+      sha256 "6370dd26f055b7554fa20ac1c3d12f2d3d9be8724f815344e05a9dce6b1c84a8"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0012-matroskadec-read-timecode-in-BlockAddition.patch"
-      sha256 "e821f11ccd5696197125fda29f6803f1a1a07e857174978997b9c4f4911a003b"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0013-matroskaenc-write-timecode-in-BlockAddition.patch"
+      sha256 "d0c7927d6521bca842a80f6c0ecddba6d7e1dda0ea97e1d458b726dc1b8431bd"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0013-matroskaenc-write-timecode-in-BlockAddition.patch"
-      sha256 "9097ad16c59ea6d7ca6d38be79b34d6578405fdd0690b832cfb55826568e1c72"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0014-mux-keep-AV_PKT_DATA_S12M_TIMECODE-during-transcode.patch"
+      sha256 "622ab66f99de186d4f3b5881a5b8ed7a5f4b1c543b760ca2c38f67eee4e106c8"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0014-mux-keep-AV_PKT_DATA_S12M_TIMECODE-during-transcode.patch"
-      sha256 "8bef14d13611614f6e2a6a68088ab21f16d8eb3eca9733e8f20eb5de5f512a16"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0015-decklink_dec-support-readout-of-all-timecodes.patch"
+      sha256 "f0a4e95af59840e61433f8676895c76e6cf99337bcc15a83794c28c097a078c0"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0015-decklink_dec-support-readout-of-all-timecodes.patch"
-      sha256 "748bfe1398f34f5edde0b38082c6034d99a3002e43ec0ad63104d2d9a12bb087"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0016-decklink-fix-missing-IID_IUnknown.patch"
+      sha256 "4b2be26eda44692f234ba440ea6ab22fa4b820cdb79ebbb358e189784c870307"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0016-matroskadec-enc-support-of-TimeCodeXml-input.patch"
-      sha256 "98781f40ad99261e75c9ff3796e04caa0b4f8096bbb1da3c2632b5057bcab664"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0017-matroskadec-enc-support-of-TimeCodeXml-input.patch"
+      sha256 "7cfbf05340f86ac9f082ef4121a607d2af17e8dff49aff84eae464ca37987eb4"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0017-decklink_dec-support-of-timecode-also-with-multiple-.patch"
-      sha256 "a02bafd57eaca2e8316b2176463affc277a46139184a9466c1775789da04e16a"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0018-decklink_dec-support-of-timecode-also-with-multiple-.patch"
+      sha256 "c933935c595ffaf4a57307c07c0538c6c43d9d9c3dead1bc97090b8e5b6b99bc"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0018-decklink_dec-support-labels.patch"
-      sha256 "0dcbdef6ead3beb26f22950802c29bcf522b2a736bca08e167ca9de7c7fa3d25"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0019-decklink_dec-support-labels.patch"
+      sha256 "3f5f51ebdcb55a0fbecdd5cdd8034a584a2052be92f9869ca0221a4a1b11afda"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/a3e4ea5dec804d85e0ee5bbfa056b5731622ffc2/0019-avformat-add-DAT-demuxer.patch"
-      sha256 "7408437bbb33505e4c37a17c04d2ed9585e21ad6392d7687e434a4330a8d6f2c"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0020-avformat-add-DAT-demuxer.patch"
+      sha256 "83014856fcfa48c643fd2d0670eba370ad7728591e2a8897d51833662cf1c477"
+    end
+
+    patch do
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0021-Add-a-helper-message-when-the-Vulkan-wrapper-is-not-.patch"
+      sha256 "ee14dc3fa37e3c45dacb3232183499059385cc8266f716971c7dc42ef7aa2d76"
+    end
+
+    patch do
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/949155e32df416910526c4186809dfa271349b2f/0022-Allow-building-with-decklink-support-and-gpl-compone.patch"
+      sha256 "e25225dc4135903c1f7b32354f7ab31e6294efa7fd8981a660754927288ae608"
     end
   end
 
@@ -117,103 +126,113 @@ class FfmpegMa < Formula
     url "git://git.ffmpeg.org/ffmpeg.git", branch: "master"
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0001-EXR_consider_float16_as_uint16.patch"
-      sha256 "e0387e4237ebd997336506b6b3a58c3827a64871e7bbaf17f5993d9858847a18"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0001-EXR_consider_float16_as_uint16.patch"
+      sha256 "d49feec53ec58a10b58775e1616a079b92814806f35d96c98de7e33690410f9c"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0002-libavcodec-flacenc-force-32-bit-output-for-32-bit-in.patch"
-      sha256 "83871729ade1b3fc998d487e27cc60d2ab5a42d8421917f2b2354148ab438392"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0002-libavcodec-flacenc-force-32-bit-output-for-32-bit-in.patch"
+      sha256 "7e92b40c6d23be91997dc05e64ab7af592185fd8110aaf7edd34b1be939919e9"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0003-avcodec-jpeg2000dec-support-of-2-fields-in-1-AVPacke.patch"
-      sha256 "cf9506c7a0dc92cf7858b3f877934959ea170ea880d71adfcf91dbaea2392e8d"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0003-avcodec-jpeg2000dec-support-of-2-fields-in-1-AVPacke.patch"
+      sha256 "6a5289d0cc37fbb0dc126561ed5bf821bb476f7cd4aeaf0bac5e8cb2331b4476"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0004-avcodec-dpx-Fix-B-W-film-scans-from-DIAMANT-Film.patch"
-      sha256 "326abad5d394cf157798953166a7331ab58b48dd532ae4d2ca6b583094e1d31a"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0004-avcodec-dpx-Fix-B-W-film-scans-from-DIAMANT-Film.patch"
+      sha256 "495104b1bb94435de79ace4a1d686586c16ca05865adba4be0d9c94a82a482c3"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0005-configure-evaluate-toolchain-to-determine-suffix.patch"
-      sha256 "7246ead5449673a5b84b1a974358db1298cdc3e13d4e30aa8ae7e87ced83827a"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0005-configure-evaluate-toolchain-to-determine-suffix.patch"
+      sha256 "596348c010e46e7a29859977e2b071fdcef8b61759d6339c437ec857cdd5291e"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0006-DeckLink-SDK-15.3-public-headers.patch"
-      sha256 "266a508fc5a75b768228f947db2a5b7ba4f91b108180792714e23d280d0df444"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0006-DeckLink-SDK-15.3-public-headers.patch"
+      sha256 "fe3925bfb3978b8ed2892139f2b7b97ce2796d00a12587d0ac5866bb9b46e947"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0007-matroskaenc-remove-unused-MaxBlockAdditionID.patch"
-      sha256 "73cf5cfd1cf38885b5e4dfaa49fb8f0c527caead177ec5307b21df6b949c96a7"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0007-matroskaenc-remove-unused-MaxBlockAdditionID.patch"
+      sha256 "810a38d5fabad62e07f46557e031a40a6faae1f5d90ae72a09f9fe1b3b061656"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0008-matroskaenc-reserve_video_track_space-option.patch"
-      sha256 "c4094b052f13342c56f243ec65f400013d557965046d37cd10118fb635789b26"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0008-matroskaenc-reserve_video_track_space-option.patch"
+      sha256 "3368083fbafcc3971bc5cbc2061f4d14a22b7f5d7b07b7abeadbcbcc3f55dbec"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0009-matroskaenc-increase-default-for-reserved-bytes-in-v.patch"
-      sha256 "8b620ba200fe0b53c559600a7e5a31e706b38d34aa68d0fdae4674674a08b09e"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0009-matroskaenc-increase-default-for-reserved-bytes-in-v.patch"
+      sha256 "880c762ca141d0684de85e5b0cff5c34116cfa89ed27395ddaa0565bf033bc95"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0010-32-bit-timecode-to-64-bit-RFC-5484-timecode-function.patch"
-      sha256 "ef48a139b1e9d34d58c62d23a8e5320330b9af0bb4a55d795263d3c67ef7e06e"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0010-32-bit-timecode-to-64-bit-RFC-5484-timecode-function.patch"
+      sha256 "c1fccd52fb055a6247cc55cb41a3611be6bdf6f5c44430b69d717bfa60069d5b"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0011-decklink_dec-store-timecode-in-64-bit-RFC-5484-forma.patch"
-      sha256 "564c2b7079fef576f522f394a8b45f205970642395c56533e006fa1db8bac7d0"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0011-decklink_dec-store-timecode-in-64-bit-RFC-5484-forma.patch"
+      sha256 "f7f2db16a49886b694f852dc6afe477ce7165e3d849c0d5ba246a3314cd8bf5c"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0012-matroskadec-read-timecode-in-BlockAddition.patch"
-      sha256 "3478aab8f678885653a1ede23f08d77520db275c413932e5e90fe7ff13a923cc"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0012-matroskadec-read-timecode-in-BlockAddition.patch"
+      sha256 "6370dd26f055b7554fa20ac1c3d12f2d3d9be8724f815344e05a9dce6b1c84a8"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0013-matroskaenc-write-timecode-in-BlockAddition.patch"
-      sha256 "a283c4194b99baf99ea12d6045d8e679956a712ea042b743199f8e44f544c65e"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0013-matroskaenc-write-timecode-in-BlockAddition.patch"
+      sha256 "d0c7927d6521bca842a80f6c0ecddba6d7e1dda0ea97e1d458b726dc1b8431bd"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0014-mux-keep-AV_PKT_DATA_S12M_TIMECODE-during-transcode.patch"
-      sha256 "9be10ace9b7f968cc4cdccc7e7b303b4ee059702e00958c7aaa9c8153c03898d"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0014-mux-keep-AV_PKT_DATA_S12M_TIMECODE-during-transcode.patch"
+      sha256 "622ab66f99de186d4f3b5881a5b8ed7a5f4b1c543b760ca2c38f67eee4e106c8"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0015-decklink_dec-support-readout-of-all-timecodes.patch"
-      sha256 "79af0a6c07e25ca0e04fe01f382ce9c9e292a59bf8096122a7afbbc9e98ff90f"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0015-decklink_dec-support-readout-of-all-timecodes.patch"
+      sha256 "f0a4e95af59840e61433f8676895c76e6cf99337bcc15a83794c28c097a078c0"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0016-decklink-fix-missing-IID_IUnknown.patch"
-      sha256 "8c20db91a8ceaa08662bf45ad1dbdaf093f0ae9f3235b3e85604470695f957e6"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0016-decklink-fix-missing-IID_IUnknown.patch"
+      sha256 "4b2be26eda44692f234ba440ea6ab22fa4b820cdb79ebbb358e189784c870307"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0017-matroskadec-enc-support-of-TimeCodeXml-input.patch"
-      sha256 "1e47b627219ac05c64dcd93cc7f7eeab03cda2eb6e43b99e3b622a2415757e19"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0017-matroskadec-enc-support-of-TimeCodeXml-input.patch"
+      sha256 "fc20c9a23f27a81157f554b01d797ddeb1cf8f35b0b82de919bd7400b577101e"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0018-decklink_dec-support-of-timecode-also-with-multiple-.patch"
-      sha256 "3300ffd6f11e02aa1fac81e372a9f3936991b383087d07443a3197fd2ed4656b"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0018-decklink_dec-support-of-timecode-also-with-multiple-.patch"
+      sha256 "c933935c595ffaf4a57307c07c0538c6c43d9d9c3dead1bc97090b8e5b6b99bc"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0019-decklink_dec-support-labels.patch"
-      sha256 "5eb1f98925cbfd74adb57d680d3569b78cef57b2b2efe309e71fb9173e2b8a3a"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0019-decklink_dec-support-labels.patch"
+      sha256 "3f5f51ebdcb55a0fbecdd5cdd8034a584a2052be92f9869ca0221a4a1b11afda"
     end
 
     patch do
-      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/aa2963ff5d377322c2f1690e6a3e1e9c67a7dd06/0020-avformat-add-DAT-demuxer.patch"
-      sha256 "7408437bbb33505e4c37a17c04d2ed9585e21ad6392d7687e434a4330a8d6f2c"
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0020-avformat-add-DAT-demuxer.patch"
+      sha256 "83014856fcfa48c643fd2d0670eba370ad7728591e2a8897d51833662cf1c477"
+    end
+
+    patch do
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0021-Add-a-helper-message-when-the-Vulkan-wrapper-is-not-.patch"
+      sha256 "ee14dc3fa37e3c45dacb3232183499059385cc8266f716971c7dc42ef7aa2d76"
+    end
+
+    patch do
+      url "https://raw.githubusercontent.com/MediaArea/ffmpeg-ma-patch/65d5fc460ae6bbef75e6346b541fa77ab4440049/0022-Allow-building-with-decklink-support-and-gpl-compone.patch"
+      sha256 "e25225dc4135903c1f7b32354f7ab31e6294efa7fd8981a660754927288ae608"
     end
   end
 
@@ -242,6 +261,7 @@ class FfmpegMa < Formula
     args = %W[
       --progs-suffix=-ma
       --prefix=#{prefix}
+      --enable-gpl
       --disable-autodetect
       --disable-debug
       --disable-shared
@@ -252,7 +272,6 @@ class FfmpegMa < Formula
       --enable-libass
       --enable-libopenh264
       --enable-vulkan
-      --enable-libshaderc
       --enable-decklink
       --enable-zlib
       --enable-sdl2

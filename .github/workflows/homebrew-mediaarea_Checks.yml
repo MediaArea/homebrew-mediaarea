@@ -7,24 +7,33 @@ jobs:
     strategy:
       fail-fast: false
     runs-on:  macos-latest
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: List changed files
+      - name: List changed formulae
         id: changed-files
-        uses: jitterbit/get-changed-files@v1
+        uses: dorny/paths-filter@v4
+        with:
+          list-files: shell
+          filters: |
+            rb:
+              - added|modified: '**/*.rb'
       - name: Install repository
+        if: steps.changed-files.outputs.rb == 'true'
         run: |
           brew tap mediaarea/mediaarea $PWD
           brew trust mediaarea/mediaarea
       - name: Check
+        if: steps.changed-files.outputs.rb == 'true'
+        env:
+          RB_FILES: ${{ steps.changed-files.outputs.rb_files }}
         run: |
-            for file in ${{ steps.changed-files.outputs.added_modified }} ; do
-                if [[  "${file##*.}" != "rb" ]] ; then
-                    continue
-                fi
+            for file in $RB_FILES ; do
                 formula=$(basename -s .rb $file)
                 if [[ "$(dirname $file)" == "Casks" ]] ; then
                     brew install --cask $formula
