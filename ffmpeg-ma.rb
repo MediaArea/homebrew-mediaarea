@@ -239,13 +239,13 @@ class FfmpegMa < Formula
   option "with-iec61883", "Enable DV device (Linux)" if OS.linux?
 
   depends_on "pkgconf" => :build
+  depends_on "shaderc" => :build
+  depends_on "vulkan-headers" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
   depends_on "libass"
   depends_on "openh264"
   depends_on "sdl2"
-  depends_on "shaderc"
-  depends_on "vulkan-headers"
 
   uses_from_macos "zlib"
 
